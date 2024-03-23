@@ -1,0 +1,87 @@
+/* Detailed task page  */
+
+body{
+    background-color: #4c4c4c;
+    background: -webkit-linear-gradient(to bottom, #4c4c4c, #7800ff);
+    background: linear-gradient(to bottom, #4c4c4c, #7800ff);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: fit-content;
+    color: white;
+}
+
+a{
+    color: white;
+    border: 1px solid white;
+    padding: 2px;
+    text-decoration: none;
+}
+
+#show-task{
+    position: absolute;
+    padding: 7px;
+    border: 1px solid white;
+    top: 20px;
+    transition: 0.4s ease-in-out;
+}
+
+#show-task:hover{
+    border:1px solid grey;
+}
+
+.task-box{
+    height: max-content;
+    width: 65vw;
+    border: 1px solid rgb(204, 204, 204);
+    position: absolute;
+    top: 5%;
+    left: 17%;
+    padding: 20px;
+}
+
+.task-name{
+    margin-left: 10px;
+    text-transform: uppercase;
+    color: yellow;
+}
+
+table *{
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+table button{
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 8px;
+}
+
+td{
+    padding: 15px;
+}
+
+.active{
+    background-color: rgb(255, 237, 237);
+    border: 1px solid rgb(131, 170, 255);
+    box-shadow: 0 0 5px 5px rgb(131, 170, 255);
+}
+
+.normal{
+    background-color: rgba(143, 143, 143, 0);
+    border: 1px solid black;
+    transition: 0.3s ease-in-out;
+}
+
+.normal:hover{
+    border: 1px solid rgb(131, 170, 255);
+    box-shadow: 0 0 4px 4px rgb(131, 170, 255);
+}
+
+#vertical-line{
+    transform: rotate(90deg);
+    position: absolute;
+    left: -20%;
+    width: 350px;
+    top: 40%;
+}

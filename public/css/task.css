@@ -1,0 +1,69 @@
+body{
+    background-color: #4c4c4c;
+    background: -webkit-linear-gradient(to bottom, #4c4c4c, #7800ff);
+    background: linear-gradient(to bottom, #4c4c4c, #7800ff);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+form{
+    width: max-content;
+    padding: 12px;
+    margin-top: 22%;
+    margin-left: 21%;
+}
+
+input{
+    width: 45vw;
+    height: 45px;
+    font-size: 1.3rem;
+    padding-left: 15px;
+    border: 2px solid rgba(0, 0, 75, 0.185);
+}
+
+button{
+    padding: 5px;
+    width: 80px;
+    height: 45px;
+    margin-left: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    transition: 0.4s ease-in-out;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.success-message{
+    text-align: center;
+    color: rgb(96, 255, 96);
+    margin-left: -18px;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+a{
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 4px;
+    border: 1px solid grey;
+    padding: 8px;
+    background-color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-left: 43%;
+    transition: 0.7s ease-in-out;
+}
+a:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}

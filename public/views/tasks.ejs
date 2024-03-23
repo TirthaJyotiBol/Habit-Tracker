@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/taskspage.css">
+<body>
+    <a href="/addtask" id="task-add-button"> 
+        ADD
+    </a>
+    <!-- If No tasks then display the message -->
+    <%
+        if(!tasks){
+            %>
+                <h1 class="no-tasks">No Habits</h1>
+            <%
+        }
+        else{
+            %>
+                <h1 class="no-tasks">Habits</h1>
+            <%
+        }
+       
+    %>
+
+    <div class="task-controller">
+        <!-- Traverse all the tasks and display it on view -->
+        <%
+            if(tasks){
+            tasks.forEach((curr)=>{
+                %>
+                <a href="/details/<%=curr._id%>" class="detail-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </a>
+                <div class="task-box" id="<%=curr._id%>">
+                    <HeaderTask>
+                        <p><%=curr.task%></p>
+                        <a href="delete?task=<%=curr._id%>" class="delete-button"><i class="fa-solid fa-trash"></i></a>
+                    </HeaderTask>
+                    <!-- <StatusTasks>
+                        <%
+                            if(curr.status=='0'){
+                                %>
+                                 <a  class="status-button active">none</a>
+                                <%
+                            }
+                            else{
+                                %>
+                                 <a href="updatetask?id=<%=curr._id%>&task=0" class="status-button">none</a>
+                                <%
+                            }
+                        %>
+                        
+                        <%
+                            if(curr.status=='1'){
+                                %>
+                                <a class="status-button active">done</a>
+                                <%
+                            }
+                            else{
+                                %>
+                                <a href="updatetask?id=<%=curr._id%>&task=1" class="status-button">done</a>
+                                <%
+                            }
+                        %>
+
+                        <%
+                            if(curr.status=='2'){
+                                %>
+                                <a class="status-button active">not done</a>
+                                <%
+                            }
+                            else{
+                                %>
+                                <a href="updatetask?id=<%=curr._id%>&task=2" class="status-button">not done</a>
+                                <%
+                            }
+                        %>
+                        
+                    </StatusTasks> -->
+                </div>
+                <%
+            })
+        }
+        %>
+    
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+</html>

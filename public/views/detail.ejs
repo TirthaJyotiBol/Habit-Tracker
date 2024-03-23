@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Detail</title>
+    <link rel="stylesheet" href="/css/taskdetail.css">
+</head>
+<body>
+    <a href="/showtasks" id="show-task">show tasks</a>
+    <div class="task-box">
+        <h2 class="task-name">
+           <%=taskname.task%>
+        </h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Done</th>
+                <th>Not Done</th>
+                <th>None</th>
+            </tr>
+            <%
+                if(detail){
+                    %>
+                        <hr id="horizantal-line">
+                    <%
+                    detail.forEach((curr)=>{
+                        %>
+                            <tr>
+                                <td><%=curr.date%></td>
+                                <%
+                                    if(curr.status==1){
+                                        %>
+                                        <td><button class="active"></button></td>
+                                        <td><a href="/activate?status=0&id=<%=curr._id%>&taskid=<%=taskname._id%>&date=<%=curr.date%>"><button class="normal"></button></a></td>
+                                        <td><a href="/activate?status=2&id=<%=curr._id%>&taskid=<%=taskname._id%>&date=<%=curr.date%>"><button class="normal"></button></a></td>
+                                        <%
+                                    }
+                                    else if(curr.status==0){
+                                        %>
+                                        <td><a href="/activate?status=1&id=<%=curr._id%>&taskid=<%=taskname._id%>&date=<%=curr.date%>"><button class="normal"></button></a></td>
+                                        <td><button class="active"></button></td>
+                                        <td><a href="/activate?status=2&id=<%=curr._id%>&taskid=<%=taskname._id%>&date=<%=curr.date%>"><button class="normal"></button></a></td>
+                                        <%
+                                    }
+                                    else{
+                                        %>
+                                        <td><a href="/activate?status=1&id=<%=curr._id%>&taskid=<%=taskname._id%>&date=<%=curr.date%>"><button class="normal"></button></a></td>
+                                        <td><a href="/activate?status=0&id=<%=curr._id%>&taskid=<%=taskname._id%>&date=<%=curr.date%>"><button class="normal"></button></a></td>
+                                        <td><button class="active"></button></td>
+                                        <%
+                                    }
+                                %>
+                            </tr>
+                        <%
+                    })
+                }
+            %>
+        </table>
+        
+    </div>
+
+</body>
+</html>

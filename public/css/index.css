@@ -1,0 +1,23 @@
+section{
+    margin-top: 20%;
+    margin-left: 42%;
+}
+
+a{
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 4px;
+    border: 1px solid grey;
+    padding: 8px;
+    background-color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: 0.7s ease-in-out;
+}
+
+a:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}

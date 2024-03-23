@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+</head>
+<link rel="stylesheet" href="/css/task.css">
+<body>
+    <form action="/addtask" method="post">
+        <input type="text" placeholder="Name Your Habit" name="task" required>
+        <button>add</button>
+    </form>
+    <br>
+    <a href="showtasks" id="show-task">show habits</a>
+    <%
+        if(message){
+            %>
+                <p class="success-message">
+                    Your Task Has been added successfully
+                </p>
+            <%
+        }
+    %>
+</body>
+</html>
