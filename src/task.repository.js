@@ -1,5 +1,6 @@
 import TaskModel from "./task.schema.js";
 import dateModel from "./days.schema.js";
+import connect from "./config.mongo.js";
 
 // Task Repository for performing the database task related operations
 export default class TaskRepository{
@@ -8,13 +9,19 @@ export default class TaskRepository{
     async addTask(task,date,status,dates){
         try{
             let newTask = new TaskModel({task,date,status});
-            newTask.save();
+            await newTask.save();
             let taskId = newTask._id;
             let newDate = new dateModel({taskId,dates});
-            newDate.save();
+            await newDate.save();
+            return {
+                'success':true
+            };
         }
         catch(err){
             console.log(err);
+            return {
+                'success':false
+            };
         }
     }
 
